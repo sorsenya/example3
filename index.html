@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ангелина — Beauty Studio: парикмахерские услуги, маникюр, косметология, брови и ресницы</title>
+<meta name="description" content="Beauty Studio «Ангелина»: стрижки и окрашивание, маникюр и педикюр, косметология, ресницы и брови. Оставьте заявку на запись." />
+<meta name="theme-color" content="#F5EEE9" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:title" content="Ангелина — Beauty Studio" />
+<meta property="og:description" content="Уход за волосами, ногтями и лицом в атмосфере комфорта и внимания к деталям." />
+<meta property="og:image" content="gallery/hair-long.webp" />
+<link rel="preload" href="fonts/cormorant-garamond-cyrillic-500-normal.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" as="image" href="gallery/hair-long.webp" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3CradialGradient id='g' cx='30%25' cy='30%25'%3E%3Cstop offset='0' stop-color='%23f2c6d3'/%3E%3Cstop offset='.55' stop-color='%23b8e3dc'/%3E%3Cstop offset='1' stop-color='%23277F86'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="style.css" />
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="skip" href="#main">К содержимому</a>
+
+<header class="header" id="header">
+  <div class="header__bar wrap">
+    <a href="#top" aria-label="Ангелина — Beauty Studio, на главную">
+      <span class="logo"><span class="logo__mark" aria-hidden="true"></span><span class="logo__text"><span class="logo__name">ANGELINA</span><span class="logo__sub">BEAUTY STUDIO</span></span></span>
+    </a>
+    <nav id="nav" class="nav" aria-label="Основная навигация">
+      <a href="#services">Услуги</a><a href="#gallery">Галерея</a><a href="#about">О салоне</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a>
+      <a href="#booking" class="btn nav__cta" data-book>Записаться</a>
+    </nav>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Открыть меню"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+  <section id="top" class="hero" aria-labelledby="hero-title">
+    <div class="pearl pearl--hero" aria-hidden="true"></div>
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow">Beauty Studio · Angelina</p>
+        <h1 id="hero-title">Красота, в&nbsp;которой вы&nbsp;— <em>главная</em></h1>
+        <p class="hero__lead">Уход за волосами, ногтями и лицом в атмосфере комфорта и внимания к деталям.</p>
+        <div class="hero__actions">
+          <a href="#booking" class="btn" data-book>Записаться на услугу</a>
+          <a class="link" href="#gallery">Посмотреть работы</a>
+        </div>
+      </div>
+      <div class="hero__art">
+        <div class="arch"><img src="gallery/hair-long.webp" alt="Светлые длинные волосы на фоне перламутровой стены салона" width="960" height="1280" fetchpriority="high" /></div>
+        <div class="orb"><img src="gallery/nails-1-sm.webp" alt="Маникюр с розовым акцентом" width="520" height="693" /></div>
+        <svg class="ring" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="98" fill="none" stroke="currentColor" stroke-width=".6" /></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section directions" aria-labelledby="dir-title">
+    <div class="wrap">
+      <header class="section__head reveal">
+        <p class="eyebrow">Направления</p>
+        <h2 id="dir-title">Четыре&nbsp;способа позаботиться о&nbsp;себе</h2>
+      </header>
+      <div class="dir-grid" id="directions"></div>
+    </div>
+  </section>
+
+  <section id="services" class="section catalog">
+    <span id="prices" class="anchor" aria-hidden="true"></span>
+    <div class="wrap catalog__grid">
+      <header class="section__head reveal">
+        <p class="eyebrow">Услуги и цены</p>
+        <h2>Найдите нужную услугу</h2>
+        <p class="muted">Там, где цена зависит от задачи, мы называем её при записи — без округлений «на глаз».</p>
+      </header>
+      <div class="catalog__main reveal">
+        <div role="tablist" aria-label="Направления услуг" class="tabs" id="tabs"></div>
+        <div id="catalog-panel" role="tabpanel" class="panel">
+          <h3 class="panel__title" id="panel-title"></h3>
+          <ul class="rows" id="rows"></ul>
+          <div class="panel__foot">
+            <button class="link link--btn" id="expand" type="button" aria-expanded="false" hidden></button>
+            <a href="#booking" class="btn" id="panel-book" data-book></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section gallery">
+    <div class="wrap">
+      <header class="section__head section__head--row reveal">
+        <div><p class="eyebrow">Галерея</p><h2>Пространство и&nbsp;работы</h2></div>
+        <div class="filters" id="filters" role="group" aria-label="Фильтр галереи"></div>
+      </header>
+      <ul class="mosaic" id="mosaic"></ul>
+      <p class="muted small">Часть фотографий интерьера — визуализации пространства.</p>
+    </div>
+    <dialog class="lightbox" id="lightbox" aria-label="Просмотр фотографии">
+      <figure><img id="lb-img" alt="" /><figcaption id="lb-cap"></figcaption></figure>
+      <button class="lb lb--close" id="lb-close" type="button" aria-label="Закрыть">×</button>
+      <button class="lb lb--prev" id="lb-prev" type="button" aria-label="Предыдущее фото">‹</button>
+      <button class="lb lb--next" id="lb-next" type="button" aria-label="Следующее фото">›</button>
+    </dialog>
+  </section>
+
+  <section id="about" class="section about" aria-labelledby="about-title">
+    <div class="wrap about__grid">
+      <div class="about__text reveal">
+        <p class="eyebrow">О салоне</p>
+        <h2 id="about-title">Пространство, где можно уделить время <em>себе</em></h2>
+        <p class="about__lead">«Ангелина» — пространство красоты, где можно уделить время себе, обновить образ и подобрать уход под свои пожелания.</p>
+        <p>От стрижки и окрашивания до маникюра и косметологических процедур — мы собрали направления, которые помогают заботиться о себе в одном месте.</p>
+      </div>
+      <div class="about__photos">
+        <img class="ph ph--a reveal" src="gallery/interior-3.webp" alt="Визуализация интерьера: пудрово-розовая стена, ажурная перегородка и бирюзовое кресло" loading="lazy" width="600" height="758" />
+        <img class="ph ph--b reveal" src="gallery/wall-logo-2.webp" alt="Визуализация зоны ожидания с перламутровой стеной" loading="lazy" width="600" height="758" />
+        <img class="ph ph--c reveal" src="gallery/interior-7-sm.webp" alt="Визуализация рабочей зоны со светлым полом под дерево" loading="lazy" width="520" height="657" />
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="section reviews" aria-labelledby="rev-title">
+    <div class="wrap">
+      <header class="section__head reveal"><p class="eyebrow">Отзывы</p><h2 id="rev-title">Слова клиентов</h2></header>
+      <div class="rev-grid" id="rev-grid"></div>
+      <p class="muted small">Отзывы с Яндекс Карт. <a class="link" id="ymaps-reviews" href="#" target="_blank" rel="noopener noreferrer" hidden>Читать на Яндекс Картах</a></p>
+    </div>
+  </section>
+
+  <section id="booking" class="section booking" aria-labelledby="book-title">
+    <div class="pearl pearl--book" aria-hidden="true"></div>
+    <div class="wrap booking__grid">
+      <header class="booking__intro reveal">
+        <p class="eyebrow">Запись</p>
+        <h2 id="book-title">Оставьте заявку</h2>
+        <p>Оставьте заявку, и мы свяжемся с вами, чтобы уточнить детали записи.</p>
+        <p class="muted small">Это заявка, а не подтверждённая запись: время согласуем при звонке.</p>
+      </header>
+      <form class="form reveal" id="form" novalidate>
+        <div class="field"><label for="lead-name">Имя *</label>
+          <input id="lead-name" name="name" autocomplete="given-name" aria-describedby="err-name" />
+          <p class="field__err" id="err-name" hidden></p></div>
+        <div class="field"><label for="lead-phone">Телефон *</label>
+          <input id="lead-phone" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (900) 000-00-00" aria-describedby="err-phone" />
+          <p class="field__err" id="err-phone" hidden></p></div>
+        <div class="field"><label for="lead-category">Направление</label>
+          <select id="lead-category"><option value="">Выберите направление</option></select></div>
+        <div class="field"><label for="lead-service">Услуга</label>
+          <select id="lead-service" disabled><option value="">Сначала выберите направление</option></select></div>
+        <div class="field field--half"><label for="lead-date">Желаемая дата</label><input id="lead-date" type="date" /></div>
+        <div class="field field--half"><label for="lead-time">Желаемое время</label><input id="lead-time" type="time" /></div>
+        <div class="field"><label for="lead-comment">Комментарий</label><textarea id="lead-comment" rows="3"></textarea></div>
+        <div class="field check">
+          <input id="lead-consent" type="checkbox" aria-describedby="err-consent" />
+          <label for="lead-consent">Согласен(на) на обработку персональных данных <span id="privacy-wrap" hidden>— <a id="privacy-link" href="#" target="_blank" rel="noopener noreferrer">документ</a></span></label>
+          <p class="field__err" id="err-consent" hidden></p>
+        </div>
+        <p class="notice notice--info" id="demo-note" role="status" hidden></p>
+        <button class="btn btn--block" type="submit">Оставить заявку</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="contacts" class="section contacts" aria-labelledby="c-title">
+    <div class="wrap contacts__grid">
+      <div class="reveal">
+        <p class="eyebrow">Контакты</p>
+        <h2 id="c-title">Ждём вас<br />в&nbsp;«Ангелине»</h2>
+        <a href="#booking" class="btn" data-book>Записаться</a>
+      </div>
+      <dl class="contacts__list reveal" id="contacts-list"></dl>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__row">
+    <span class="logo"><span class="logo__mark" aria-hidden="true"></span><span class="logo__text"><span class="logo__name">ANGELINA</span><span class="logo__sub">BEAUTY STUDIO</span></span></span>
+    <p id="copy"></p>
+    <a href="#top" class="link">Наверх</a>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="sticky"><a href="#booking" class="btn btn--block" data-book>Записаться</a></div>
+
+<script src="script.js"></script>
+</body>
+</html>
